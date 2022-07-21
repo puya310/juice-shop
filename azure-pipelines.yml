@@ -1,4 +1,4 @@
-pool: test 
+pool: Default 
 
 steps:
   - checkout: self
