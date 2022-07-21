@@ -16,4 +16,5 @@ jobs:
           monitor-on-build: true
           severity-threshold: high
           token-variable: SNYK_TOKEN
+          
 workflows: null
