@@ -1,0 +1,19 @@
+pool: test 
+
+steps:
+  - checkout: self
+
+  # .. your instructions on building the app or preparing the repository
+
+  # snyk open source
+  - task: SnykSecurityScan@1
+    continueOnError: true
+    inputs:
+      serviceConnectionEndpoint: 'SNYK_TOKEN'
+      testType: 'app'
+      # This configures a pure local scan - results are not uploaded. 
+      # If this is desired, set `monitorWhen` to 'always' and remove the `--sarif-file-output` argument.
+
+      # If you need to connect to the EU Instance, add --API=https://app.eu.snyk.io/api to additionalArguments
+      
+      monitorWhen: 'never'
